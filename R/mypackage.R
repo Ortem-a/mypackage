@@ -3,18 +3,29 @@
 #' @name mypackage
 #' @docType package
 #' @author Anikin_Artem
-#' @import devtools roxygen2 testthat covr lintr
+#' @import devtools roxygen2 testthat covr lintr docstring
 NULL
 
-#' Считает среднюю арифметическую всей входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return одно число - среднее арифметическое таблицы в случае успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' Mean(df)
+library(roxygen2)
+devtools::document()
+
+# Считает среднюю арифметическую всей входящей таблицы
 Mean <- function(df) {
+  #' Calculate arithmetical mean
+  #'
+  #' @description This function calculate the arithmetical mean
+  #' of whole input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: one number - arithmetical mean of whole table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' Mean(data.frame)
+  #' Mean(matrix)
+  #' Mean(vector)
+  #' Mean(List)
+
   if (length(df) < 1){
     return(-1)
   }
@@ -37,16 +48,24 @@ Mean <- function(df) {
   return(result)
 }
 
-#' Считает среднюю арифметическую каждой строки входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return вектор чисел - среднее арифметическое каждой строки таблицы в случае
-#' успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' MeanRow(df)
+# Считает среднюю арифметическую каждой строки входящей таблицы
 MeanRow <- function(df) {
+  #' Calculate arithmetical mean
+  #'
+  #' @description This function calculate the arithmetical mean
+  #' of every row input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: numeric vector - arithmetical means of every
+  #' row input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' MeanRow(data.frame)
+  #' MeanRow(matrix)
+  #' MeanRow(vector)
+  #' MeanRow(List)
+
   if (length(df) < 1){
     return(-1)
   }
@@ -64,16 +83,24 @@ MeanRow <- function(df) {
   return(result)
 }
 
-#' Считает среднюю арифметическую каждого столбца входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return вектор чисел - среднее арифметическое каждого столбца таблицы в случае
-#' успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' MeanCol(df)
+# Считает среднюю арифметическую каждого столбца входящей таблицы
 MeanCol <- function(df) {
+  #' Calculate arithmetical mean
+  #'
+  #' @description This function calculate the arithmetical mean
+  #' of every column input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: numeric vector - arithmetical means of every
+  #' column input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' MeanCol(data.frame)
+  #' MeanCol(matrix)
+  #' MeanCol(vector)
+  #' MeanCol(List)
+
   if (length(df) < 1){
     return(-1)
   }
@@ -91,15 +118,23 @@ MeanCol <- function(df) {
   return(result)
 }
 
-#' Считает среднюю гармоническою входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return число - среднее гармоническое всей таблицы в случае успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' MeanGarm(df)
-MeanGarm <- function(df) {
+# Считает среднюю гармоническою входящей таблицы
+MeanHarm <- function(df) {
+  #' Calculate harmonic mean
+  #'
+  #' @description This function calculate the harmonic mean
+  #' of whole input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: one number - harmonic mean of whole input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' MeanHarm(data.frame)
+  #' MeanHarm(matrix)
+  #' MeanHarm(vector)
+  #' MeanHarm(List)
+
   if (length(df) < 1){
     return(-1)
   }
@@ -124,15 +159,23 @@ MeanGarm <- function(df) {
   return(result)
 }
 
-#' Считает среднюю геометрическую входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return число - среднее геометрическое всей таблицы в случае успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' MeanGeom(df)
+# Считает среднюю геометрическую входящей таблицы
 MeanGeom <- function(df) {
+  #' Calculate geometric mean
+  #'
+  #' @description This function calculate the geometric mean
+  #' of whole input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: one number - geometric mean of whole input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' MeanGeom(data.frame)
+  #' MeanGeom(matrix)
+  #' MeanGeom(vector)
+  #' MeanGeom(List)
+
   if (length(df) < 1){
     return(-1)
   }
@@ -157,15 +200,23 @@ MeanGeom <- function(df) {
   return(result)
 }
 
-#' Считает среднюю квадратическую величину входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return число - средняя квадратическая всей таблицы в случае успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' MeanSqr(df)
+# Считает среднюю квадратическую величину входящей таблицы
 MeanSqr <- function(df) {
+  #' Calculate square mean
+  #'
+  #' @description This function calculate the square mean
+  #' of whole input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: one number - square mean of whole input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' MeanSqr(data.frame)
+  #' MeanSqr(matrix)
+  #' MeanSqr(vector)
+  #' MeanSqr(List)
+
   if (length(df) < 1){
     return(-1)
   }
@@ -187,15 +238,23 @@ MeanSqr <- function(df) {
   return(result)
 }
 
-#' Считает медиану входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return число - медиана всей таблицы в случае успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' Median(df)
+# Считает медиану входящей таблицы
 Median <- function(df) {
+  #' Calculate median
+  #'
+  #' @description This function calculate the median
+  #' of whole input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: one number - median of whole input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' Median(data.frame)
+  #' Median(matrix)
+  #' Median(vector)
+  #' Median(List)
+
   # посчитать кол-во эл-тов
   if (nrow(df) == 0){
     n <- ncol(df)
@@ -225,15 +284,23 @@ Median <- function(df) {
   return(result)
 }
 
-#' Считает моду входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return число или вектор - мод(а) всей таблицы в случае успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' Moda(df)
+# Считает моду входящей таблицы
 Moda <- function(df) {
+  #' Calculate moda
+  #'
+  #' @description This function calculate the moda
+  #' of whole input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: one number - moda of whole input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' Moda(data.frame)
+  #' Moda(matrix)
+  #' Moda(vector)
+  #' Moda(List)
+
   # посчитать кол-во эл-тов
   if (nrow(df) == 0){
     n <- ncol(df)
@@ -263,15 +330,23 @@ Moda <- function(df) {
   return(result)
 }
 
-#' Считает стандратное отклонение входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return число - стандартное отклонение таблицы в случае успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' SD(df)
+# Считает стандратное отклонение входящей таблицы
 SD <- function(df) {
+  #' Calculate standard deviation
+  #'
+  #' @description This function calculate the standard deviation
+  #' of whole input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: one number - standard deviation of whole input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' SD(data.frame)
+  #' SD(matrix)
+  #' SD(vector)
+  #' SD(List)
+
   # посчитать кол-во эл-тов
   if (nrow(df) == 0){
     n <- ncol(df)
@@ -302,15 +377,23 @@ SD <- function(df) {
   return(result)
 }
 
-#' Считает среднее абсолютное отклонение входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return число - среднее абсолютное отклонение таблицы в случае успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' MAD(df)
+# Считает среднее абсолютное отклонение входящей таблицы
 MAD <- function(df) {
+  #' Calculate mean absolute deviation
+  #'
+  #' @description This function calculate the mean absolute deviation
+  #' of whole input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: one number - mean absolute deviation of whole input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' MAD(data.frame)
+  #' MAD(matrix)
+  #' MAD(vector)
+  #' MAD(List)
+
   # посчитать кол-во эл-тов
   if (nrow(df) == 0){
     n <- ncol(df)
@@ -341,15 +424,23 @@ MAD <- function(df) {
   return(result)
 }
 
-#' Считает стандартную ошибку среднего входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return число - стандартная ошбика среднего таблицы в случае успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' SEM(df)
+# Считает стандартную ошибку среднего входящей таблицы
 SEM <- function(df) {
+  #' Calculate standard error mean
+  #'
+  #' @description This function calculate the standard error mean
+  #' of whole input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: one number - standard error mean of whole input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' SEM(data.frame)
+  #' SEM(matrix)
+  #' SEM(vector)
+  #' SEM(List)
+
   # посчитать кол-во эл-тов
   if (nrow(df) == 0){
     n <- ncol(df)
@@ -382,15 +473,23 @@ SEM <- function(df) {
   return(result)
 }
 
-#' Считает минимальное значение входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return число - минимальное значение таблицы в случае успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' Min(df)
+# Считает минимальное значение входящей таблицы
 Min <- function(df) {
+  #' Calculate minimum
+  #'
+  #' @description This function calculate the minimum
+  #' of whole input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: one number - minimum of whole input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' Min(data.frame)
+  #' Min(matrix)
+  #' Min(vector)
+  #' Min(List)
+
   if (length(df) < 1){
     return(-1)
   }
@@ -405,16 +504,23 @@ Min <- function(df) {
   return(min)
 }
 
-#' Считает минимальное значение каждой строки входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return вектор чисел - минимальное значение каждой строки таблицы в случае
-#' успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' MinRow(df)
+# Считает минимальное значение каждой строки входящей таблицы
 MinRow <- function(df) {
+  #' Calculate minimum
+  #'
+  #' @description This function calculate the minimum of every row
+  #' of input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: numeric vector - minimum of every row of input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' MinRow(data.frame)
+  #' MinRow(matrix)
+  #' MinRow(vector)
+  #' MinRow(List)
+
   if (length(df) < 1){
     return(-1)
   }
@@ -431,16 +537,23 @@ MinRow <- function(df) {
   return(result)
 }
 
-#' Считает минимальное значение каждого столбца входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return вектор чисел - минимальное значение каждого столбца таблицы в случае
-#' успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' MinCol(df)
+# Считает минимальное значение каждого столбца входящей таблицы
 MinCol <- function(df) {
+  #' Calculate minimum
+  #'
+  #' @description This function calculate the minimum of every column
+  #' of input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: numeric vector - minimum of every column of input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' MinCol(data.frame)
+  #' MinCol(matrix)
+  #' MinCol(vector)
+  #' MinCol(List)
+
   if (length(df) < 1){
     return(-1)
   }
@@ -457,15 +570,23 @@ MinCol <- function(df) {
   return(result)
 }
 
-#' Считает максимальное значение входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return число - максимальное значение таблицы в случае успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' Max(df)
+# Считает максимальное значение входящей таблицы
 Max <- function(df) {
+  #' Calculate maximum
+  #'
+  #' @description This function calculate the maximum
+  #' of whole input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: one number - maximum of whole input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' Max(data.frame)
+  #' Max(matrix)
+  #' Max(vector)
+  #' Max(List)
+
   if (length(df) < 1){
     return(-1)
   }
@@ -480,16 +601,23 @@ Max <- function(df) {
   return(max)
 }
 
-#' Считает максимальное значение каждой строки входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return вектор чисел - максимальное значение каждой строки таблицы в случае
-#' успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' MaxRow(df)
+# Считает максимальное значение каждой строки входящей таблицы
 MaxRow <- function(df) {
+  #' Calculate maximum
+  #'
+  #' @description This function calculate the maximum of every row
+  #' of input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: numeric vector - maximum of every row of input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' MaxRow(data.frame)
+  #' MaxRow(matrix)
+  #' MaxRow(vector)
+  #' MaxRow(List)
+
   if (length(df) < 1){
     return(-1)
   }
@@ -506,16 +634,23 @@ MaxRow <- function(df) {
   return(result)
 }
 
-#' Считает максимальное значение каждого столбца входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return вектор чисел - максимальное значение каждого столбца таблицы в случае
-#' успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' MaxCol(df)
+# Считает максимальное значение каждого столбца входящей таблицы
 MaxCol <- function(df) {
+  #' Calculate maximum
+  #'
+  #' @description This function calculate the maximum of every column
+  #' of input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: numeric vector - maximum of every column of input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' MaxCol(data.frame)
+  #' MaxCol(matrix)
+  #' MaxCol(vector)
+  #' MaxCol(List)
+
   if (length(df) < 1){
     return(-1)
   }
@@ -532,16 +667,24 @@ MaxCol <- function(df) {
   return(result)
 }
 
-#' Считает максимальное и минимальное значения входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return именованный вектор чисел - максимальное и минимальное значения
-#' таблицы в случае успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' Range(df)
+# Считает максимальное и минимальное значения входящей таблицы
 Range <- function(df) {
+  #' Calculate minimum and maximum
+  #'
+  #' @description This function calculate minimum and maximum of whole
+  #' input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: named numeric vector - minimum and maximum of whole
+  #' input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' Range(data.frame)
+  #' Range(matrix)
+  #' Range(vector)
+  #' Range(List)
+
   if (length(df) < 1){
     return(-1)
   }
@@ -561,16 +704,24 @@ Range <- function(df) {
   return(result)
 }
 
-#' Считает основные статистические величины входящей таблицы
-#'
-#' @param численная двумерная таблица
-#' @return именованный вектор чисел - основные статистические величины входящей
-#' таблицы в случае успеха
-#' @return -1 если поданы некорректные данные
-#' @export
-#' @examples
-#' Properties(df)
+# Считает основные статистические величины входящей таблицы
 Properties <- function(df) {
+  #' Calculate main statistic values
+  #'
+  #' @description This function calculate main statistic values of whole
+  #' input table.
+  #' @param df Numeric 2 dimension table
+  #' @return Good way: named numeric vector - main statistic values of whole
+  #' input table
+  #'
+  #' Bad way: -1 if input data are invalid
+  #' @details The inputs can be also numeric vector.
+  #' @examples
+  #' Properties(data.frame)
+  #' Properties(matrix)
+  #' Properties(vector)
+  #' Properties(List)
+
   if(length(df) < 1){
     return(-1)
   }
