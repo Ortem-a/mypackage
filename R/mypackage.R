@@ -6,9 +6,6 @@
 #' @import devtools roxygen2 testthat covr lintr docstring
 NULL
 
-library(roxygen2)
-devtools::document()
-
 # Считает среднюю арифметическую всей входящей таблицы
 Mean <- function(df) {
   #' Calculate arithmetical mean
@@ -25,6 +22,7 @@ Mean <- function(df) {
   #' Mean(matrix)
   #' Mean(vector)
   #' Mean(List)
+  #' @export
 
   if (length(df) < 1){
     return(-1)
@@ -65,6 +63,7 @@ MeanRow <- function(df) {
   #' MeanRow(matrix)
   #' MeanRow(vector)
   #' MeanRow(List)
+  #' @export
 
   if (length(df) < 1){
     return(-1)
@@ -100,6 +99,7 @@ MeanCol <- function(df) {
   #' MeanCol(matrix)
   #' MeanCol(vector)
   #' MeanCol(List)
+  #' @export
 
   if (length(df) < 1){
     return(-1)
@@ -134,6 +134,7 @@ MeanHarm <- function(df) {
   #' MeanHarm(matrix)
   #' MeanHarm(vector)
   #' MeanHarm(List)
+  #' @export
 
   if (length(df) < 1){
     return(-1)
@@ -175,6 +176,7 @@ MeanGeom <- function(df) {
   #' MeanGeom(matrix)
   #' MeanGeom(vector)
   #' MeanGeom(List)
+  #' @export
 
   if (length(df) < 1){
     return(-1)
@@ -216,6 +218,7 @@ MeanSqr <- function(df) {
   #' MeanSqr(matrix)
   #' MeanSqr(vector)
   #' MeanSqr(List)
+  #' @export
 
   if (length(df) < 1){
     return(-1)
@@ -254,6 +257,7 @@ Median <- function(df) {
   #' Median(matrix)
   #' Median(vector)
   #' Median(List)
+  #' @export
 
   # посчитать кол-во эл-тов
   if (nrow(df) == 0){
@@ -300,6 +304,7 @@ Moda <- function(df) {
   #' Moda(matrix)
   #' Moda(vector)
   #' Moda(List)
+  #' @export
 
   # посчитать кол-во эл-тов
   if (nrow(df) == 0){
@@ -346,6 +351,7 @@ SD <- function(df) {
   #' SD(matrix)
   #' SD(vector)
   #' SD(List)
+  #' @export
 
   # посчитать кол-во эл-тов
   if (nrow(df) == 0){
@@ -393,6 +399,7 @@ MAD <- function(df) {
   #' MAD(matrix)
   #' MAD(vector)
   #' MAD(List)
+  #' @export
 
   # посчитать кол-во эл-тов
   if (nrow(df) == 0){
@@ -440,6 +447,7 @@ SEM <- function(df) {
   #' SEM(matrix)
   #' SEM(vector)
   #' SEM(List)
+  #' @export
 
   # посчитать кол-во эл-тов
   if (nrow(df) == 0){
@@ -489,6 +497,7 @@ Min <- function(df) {
   #' Min(matrix)
   #' Min(vector)
   #' Min(List)
+  #' @export
 
   if (length(df) < 1){
     return(-1)
@@ -520,6 +529,7 @@ MinRow <- function(df) {
   #' MinRow(matrix)
   #' MinRow(vector)
   #' MinRow(List)
+  #' @export
 
   if (length(df) < 1){
     return(-1)
@@ -553,6 +563,7 @@ MinCol <- function(df) {
   #' MinCol(matrix)
   #' MinCol(vector)
   #' MinCol(List)
+  #' @export
 
   if (length(df) < 1){
     return(-1)
@@ -586,6 +597,7 @@ Max <- function(df) {
   #' Max(matrix)
   #' Max(vector)
   #' Max(List)
+  #' @export
 
   if (length(df) < 1){
     return(-1)
@@ -617,6 +629,7 @@ MaxRow <- function(df) {
   #' MaxRow(matrix)
   #' MaxRow(vector)
   #' MaxRow(List)
+  #' @export
 
   if (length(df) < 1){
     return(-1)
@@ -650,6 +663,7 @@ MaxCol <- function(df) {
   #' MaxCol(matrix)
   #' MaxCol(vector)
   #' MaxCol(List)
+  #' @export
 
   if (length(df) < 1){
     return(-1)
@@ -684,6 +698,7 @@ Range <- function(df) {
   #' Range(matrix)
   #' Range(vector)
   #' Range(List)
+  #' @export
 
   if (length(df) < 1){
     return(-1)
@@ -721,6 +736,7 @@ Properties <- function(df) {
   #' Properties(matrix)
   #' Properties(vector)
   #' Properties(List)
+  #' @export
 
   if(length(df) < 1){
     return(-1)

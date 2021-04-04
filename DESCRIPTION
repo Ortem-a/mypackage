@@ -1,12 +1,12 @@
 Package: mypackage
 Type: Package
-Title: Do smth
-Version: 0.0.0.9000
+Title: Calculate main statistic values
+Version: 0.1
 Author: Anikin_Artem <tem4ik1867334@gmail.com>
-Description: Do smth.
+Description: Calculate Mean(different ways), SD, MAD, SEM, Min, Max, Range, etc.
 License: MIT
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Imports: devtools, roxygen2, testthat, covr, lintr
+Imports: devtools, roxygen2, testthat, covr, lintr, docstring
