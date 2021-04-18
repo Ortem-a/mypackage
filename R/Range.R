@@ -1,9 +1,10 @@
 # Считает максимальное и минимальное значения входящей таблицы
+# и разность между ними
 Range <- function(df) {
-  #' Calculate minimum and maximum
+  #' Calculate minimum and maximum and difference between them
   #'
-  #' @description This function calculate minimum and maximum of whole
-  #' input table.
+  #' @description This function calculate minimum and maximum and
+  #' difference between them of whole input table.
   #' @param df Numeric 2 dimension table
   #' @return Good way: named numeric vector - minimum and maximum and range
   #' of values of whole input table

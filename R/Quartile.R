@@ -1,11 +1,11 @@
 # считает квартили входящего вектора
 Quartile <- function(df) {
-  #' Calculate median
+  #' Calculate quartiles of input table
   #'
-  #' @description This function calculate the median
+  #' @description This function calculate the quartiles
   #' of whole input table.
   #' @param df Numeric 2 dimension vector
-  #' @return Good way: one number - median of whole input table
+  #' @return Good way: named numeric vector - quartiles of whole input table
   #'
   #' Bad way: -1 if input data are invalid
   #' @details The inputs can be also numeric vector.
@@ -15,7 +15,7 @@ Quartile <- function(df) {
   #' Quartile(vector)
   #' Quartile(List)
   #' @export
-  
+
   # предобработка данных
   df = as.data.frame(df)
   temp = vector()
@@ -23,15 +23,15 @@ Quartile <- function(df) {
     temp <- append(temp, df[i,])
   }
   df <- unlist(temp)
-  
+
   n <- length(df)
   if (n == 0){
     return(-1)
   }
-  
+
   # сортировать по неубыванию
   df <- sort(df)
-  
+
   if (n %% 2 == 1){ # в выборке нечетное число эл-тов
     f <- df[(n+1)/4]
     m <- df[(n+1)/2]
