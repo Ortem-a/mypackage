@@ -5,8 +5,8 @@ Range <- function(df) {
   #' @description This function calculate minimum and maximum of whole
   #' input table.
   #' @param df Numeric 2 dimension table
-  #' @return Good way: named numeric vector - minimum and maximum of whole
-  #' input table
+  #' @return Good way: named numeric vector - minimum and maximum and range
+  #' of values of whole input table
   #'
   #' Bad way: -1 if input data are invalid
   #' @details The inputs can be also numeric vector.
@@ -16,7 +16,7 @@ Range <- function(df) {
   #' Range(vector)
   #' Range(List)
   #' @export
-  
+
   if (length(df) < 1){
     return(-1)
   }
@@ -32,6 +32,6 @@ Range <- function(df) {
       }
     }
   }
-  result <- c('min' = min, 'max' = max)
+  result <- c('min' = min, 'max' = max, 'range' = max - min)
   return(result)
 }
