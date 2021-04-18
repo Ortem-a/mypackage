@@ -7,7 +7,7 @@
 Median(df)
 }
 \arguments{
-\item{df}{Numeric 2 dimension table}
+\item{df}{Numeric 2 dimension vector}
 }
 \value{
 Good way: one number - median of whole input table

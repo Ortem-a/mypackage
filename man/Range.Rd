@@ -2,7 +2,7 @@
 % Please edit documentation in R/Range.R
 \name{Range}
 \alias{Range}
-\title{Calculate minimum and maximum}
+\title{Calculate minimum and maximum and difference between them}
 \usage{
 Range(df)
 }
@@ -10,14 +10,14 @@ Range(df)
 \item{df}{Numeric 2 dimension table}
 }
 \value{
-Good way: named numeric vector - minimum and maximum of whole
-input table
+Good way: named numeric vector - minimum and maximum and range
+of values of whole input table
 
 Bad way: -1 if input data are invalid
 }
 \description{
-This function calculate minimum and maximum of whole
-input table.
+This function calculate minimum and maximum and
+difference between them of whole input table.
 }
 \details{
 The inputs can be also numeric vector.
