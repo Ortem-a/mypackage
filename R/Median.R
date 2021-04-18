@@ -4,7 +4,7 @@ Median <- function(df) {
   #'
   #' @description This function calculate the median
   #' of whole input table.
-  #' @param df Numeric 2 dimension table
+  #' @param df Numeric 2 dimension vector
   #' @return Good way: one number - median of whole input table
   #'
   #' Bad way: -1 if input data are invalid
@@ -15,32 +15,28 @@ Median <- function(df) {
   #' Median(vector)
   #' Median(List)
   #' @export
-  
-  # посчитать кол-во эл-тов
-  if (nrow(df) == 0){
-    n <- ncol(df)
-  } else if (ncol(df) == 0) {
-    n <- nrow(df)
-  } else {
-    n <- nrow(df) * ncol(df)
+
+  # предобработка данных
+  df = as.data.frame(df)
+  temp = vector()
+  for (i in 1:nrow(df)){
+    temp <- append(temp, df[i,])
   }
+  df <- unlist(temp)
+
+  n <- length(df)
   if (n == 0){
     return(-1)
   }
+
+  # сортировать по неубыванию
+  df <- sort(df)
+
   if (n %% 2 == 1){ # в выборке нечетное число эл-тов
     result <- df[(n+1)/2]
   } else { # в выборке четное число эл-тов
-    if (ncol(df) %% 2 == 0){ # число столбов четное
-      midCol = ncol(df) / 2
-    } else { # нечетное
-      midCol = (ncol(df) + 1) / 2
-    }
-    if (nrow(df) %% 2 == 0){ # число строк четное
-      midRow = nrow(df) / 2
-    } else { # нечетное
-      midRow = (nrow(df) + 1) / 2
-    }
-    result <- (df[midRow, midCol] + df[midRow, midCol + 1]) / 2
+    result <- (df[n/2] + df[n/2 + 1]) / 2
   }
+  result <- unname(result)
   return(result)
 }
