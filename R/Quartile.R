@@ -33,18 +33,22 @@ Quartile <- function(df) {
   df <- sort(df)
 
   if (n %% 2 == 1){ # в выборке нечетное число эл-тов
-    f <- (df[(n+1)/4] + df[(n+1)/4 + 1])
+    f <- (df[(n+1)/4] + df[(n+1)/4 + 1]) / 2
     m <- df[(n+1)/2]
-    l <- df[n+1-(n+1)/4]
+    l <- (df[n+1-(n+1)/4] + df[n+1-(n+1)/4 + 1]) / 2
   } else { # в выборке четное число эл-тов
-    f <- df[as.integer(n/4) + 1]
+    f <- (df[as.integer(n/4) + 1] + df[as.integer(n/4)]) / 2
     m <- (df[n/2] + df[n/2 + 1]) / 2
-    l <- df[n-as.integer(n/4)]
+    l <- (df[n-as.integer(n/4)] + df[n-as.integer(n/4) + 1]) / 2
   }
   # удалить имена векторов
   f <- unname(f)
   m <- unname(m)
   l <- unname(l)
-  result <- c('first' = f, 'second' = m, 'third' = l)
+  result <- c('first' = df[1],
+              'second' = f,
+              'third' = m,
+              'fourth' = l,
+              'fifth' = df[n])
   return(result)
 }
