@@ -1,7 +1,7 @@
 Package: mypackage
 Type: Package
 Title: Calculate main statistic values
-Version: 0.1
+Version: 0.2
 Author: Anikin_Artem <tem4ik1867334@gmail.com>
 Description: Calculate Mean(different ways), SD, MAD, SEM, Min, Max, Range, etc.
 License: MIT
@@ -9,4 +9,7 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Imports: devtools, roxygen2, testthat, covr, lintr, docstring
+Imports: devtools, roxygen2, docstring, testthat
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
